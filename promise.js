@@ -2,10 +2,10 @@ const { promiseTheaterIXX, promiseTheaterVGC } = require("./external.js");
 
 // TODO: Buat fungsi promiseOutput sesuai ketentuan readme
 const promiseOutput = new Promise((resolve,reject) => {
-  if('marah'){
+  if(hasil == 'marah'){
     promiseOutput = 4;
   }
-  else if ('tidak marah'){
+  else if (hasil == 'tidak marah'){
     promiseOutput = 2;
   }
 });
