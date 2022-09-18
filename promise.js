@@ -12,12 +12,12 @@ const promiseOutput = (value) => {
         theaterResult.push(...data);
 
         if (value === 'marah') {
-          const marah = theaterResult.filter((item) => item.hasil === 'marah');
+          const marah = theaterResult.filter((item) => item.result === 'marah');
 
           resolve(marah.length);
         } else if (value === 'tidak marah') {
           const tidakMarah = theaterResult.filter(
-            (item) => item.hasil === 'tidak marah'
+            (item) => item.result === 'tidak marah'
           );
 
           resolve(tidakMarah.length);
