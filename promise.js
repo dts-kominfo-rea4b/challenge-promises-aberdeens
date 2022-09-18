@@ -1,23 +1,23 @@
 const { promiseTheaterIXX, promiseTheaterVGC } = require("./external.js");
 
 // TODO: Buat fungsi promiseOutput sesuai ketentuan readme
-const promiseOutput = (value) => {
+const promiseOutput = (emosi) => {
   return new Promise((resolve) => {
-    const theaterResult = [];
+    const hasilBioskop = [];
 
     promiseTheaterIXX().then((data) => {
-      theaterResult.push(...data);
+      hasilBioskop.push(...data);
 
       promiseTheaterVGC().then((data) => {
-        theaterResult.push(...data);
+        hasilBioskop.push(...data);
 
-        if (value === 'marah') {
-          const marah = theaterResult.filter((item) => item.result === 'marah');
+        if (emosi === 'marah') {
+          const marah = hasilBioskop.filter((item) => item.hasil === 'marah');
 
           resolve(marah.length);
-        } else if (value === 'tidak marah') {
-          const tidakMarah = theaterResult.filter(
-            (item) => item.result === 'tidak marah'
+        } else if (emosi === 'tidak marah') {
+          const tidakMarah = hasilBioskop.filter(
+            (item) => item.hasil === 'tidak marah'
           );
 
           resolve(tidakMarah.length);
